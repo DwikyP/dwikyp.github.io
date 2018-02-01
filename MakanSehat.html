@@ -1,0 +1,158 @@
+<html>
+<head>
+	<title>Warpush</title>
+
+<style type="text/css">
+	table{width:50%;}
+</style>
+</head>
+<body>
+<center><h1>WARPUSH</h1></center>
+<div class="container">
+<center>
+<form name="form1" action="#">
+<table border="0" class="table">
+	<thead class="thead-light">
+		<tr><th>Menu</th><th>Price</th><th>Qty</th><th>Subtotal</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Ayam Geprek</td>
+			<td>Rp. 18000</td>
+			<td><input type="submit" value="-" onClick="dcsAyam()"/><span id="qty1" onClick="changeText()">0</span><input type="button" value="+" onClick="incAyam()"/></td>
+			<td>Rp. <span id="menu1">0</span></td>
+		</tr>
+		<tr>
+			<td>Telur Geprek</td>
+			<td>Rp. 10000</td>
+			<td><input type="submit" value="-" onClick="dcsTelur()"/><span id="qty2" onClick="changeText()">0</span><input type="button" value="+" onClick="incTelur()"/></td>
+			<td>Rp. <span id="menu2">0</span></td>
+		</tr>
+		<tr>
+			<td>Nasi Goreng</td>
+			<td>Rp. 13000</td>
+			<td><input type="submit" value="-" onClick="dcsNasi()"/><span id="qty3" onClick="changeText()">0</span><input type="button" value="+" onClick="incNasi()"/></td>
+			<td>Rp. <span id="menu3">0</span></td>
+		</tr>
+		<tr>
+			<td>Es Teh</td>
+			<td>Rp. 5000</td>
+			<td><input type="submit" value="-" onClick="dcsTeh()"/><span id="qty4" onClick="changeText()">0</span><input type="button" value="+" onClick="incTeh()"/></td>
+			<td>Rp. <span id="menu4">0</span></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="3">TOTAL</td>
+			<td>Rp. <span id="totalOrder">0</span></td>
+		</tr>
+		<tr>
+			<td> <button type="button" name="button" onclick="INVOICE()">Submit</button></td>
+			<td> <button type="button" name="button" onclick="INVOICE()">Total Invoice</button></td>
+		</tr>
+	</tfoot>
+</table>
+</form>
+<div id="invoice1">
+</div>
+</center>
+</div>
+<script type="text/javascript">
+	var qtyAyam = 0;
+	var qtyTelur = 0;
+	var qtyNasi = 0;
+	var qtyTeh = 0;
+	var total=0;
+	var i=1;
+	var listOrder = [0,0];
+	var listQty;
+	var counter = "";
+	var a=0;
+	var b=0;
+	var c=0;
+	var d=0;
+	
+	function incAyam(){
+		qtyAyam++;
+		document.getElementById('qty1').innerHTML = qtyAyam;
+		document.getElementById('menu1').innerHTML = qtyAyam*18000;
+		total+=18000;
+		TotalAll();
+
+	}
+	function dcsAyam(){
+		if(qtyAyam>0){
+		qtyAyam--;
+		document.getElementById('qty1').innerHTML = qtyAyam;
+		document.getElementById('menu1').innerHTML = qtyAyam*18000;
+		total-=18000;
+		TotalAll();
+		}
+	}
+	function incTelur(){
+		qtyTelur++;
+		document.getElementById('qty2').innerHTML = qtyTelur;
+		document.getElementById('menu2').innerHTML = qtyTelur*10000;
+		total+=10000;
+		TotalAll();
+	}
+	function dcsTelur(){
+		if(qtyTelur>0){
+		qtyTelur--;
+		document.getElementById('qty2').innerHTML = qtyTelur;
+		document.getElementById('menu2').innerHTML = qtyTelur*10000;
+		total-=10000;
+		TotalAll();
+		}
+	}
+	function incNasi(){
+		qtyNasi++;
+		document.getElementById('qty3').innerHTML = qtyNasi;
+		document.getElementById('menu3').innerHTML = qtyNasi*13000;
+		total+=13000;
+		TotalAll();
+	}
+	function dcsNasi(){
+		if(qtyNasi>0){
+		qtyNasi--;
+		document.getElementById('qty3').innerHTML = qtyNasi;
+		document.getElementById('menu3').innerHTML = qtyNasi*13000;
+		total-=13000;
+		TotalAll();
+		}
+	}
+	function incTeh(){
+		qtyTeh++;
+		document.getElementById('qty4').innerHTML = qtyTeh;
+		document.getElementById('menu4').innerHTML = qtyTeh*5000;
+		total+=5000;
+		TotalAll();
+	}
+	function dcsTeh(){
+		if(qtyTeh>0){
+		qtyTeh--;
+		document.getElementById('qty4').innerHTML = qtyTeh;
+		document.getElementById('menu4').innerHTML = qtyTeh*5000;
+		total-=5000;
+		TotalAll();
+		}
+	}
+	function TotalAll(){
+		document.getElementById('totalOrder').innerHTML = total;
+	}
+	function INVOICE(){
+		if(qtyAyam > 0 || qtyTelur > 0 || qtyNasi > 0 || qtyTeh > 0 ){
+		a+=qty1;
+		b+=qty2;
+		c+=qty3;
+		d+=qty4;
+		counter+="<h1>INVOICE "+ i +"</h1>"+"<p>Ayam Geprek "+qtyAyam+" Rp. "+qtyAyam*18000+"</p>"+"<p>Telur Geprek "+qtyTelur+" Rp. "+qtyTelur*10000+"</p>"+"<p>Nasi Goreng "+qtyNasi+" Rp. "+qtyNasi*13000+"</p>"+"<p>Es Teh "+qtyTeh+" Rp. "+qtyTeh*5000+"</p>";
+		document.getElementById('invoice1').innerHTML = counter;
+		i++;
+		
+		}
+	}
+
+</script>
+</body>
+</html>
