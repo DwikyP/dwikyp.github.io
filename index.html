@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trade Option</title>
+	<link rel="shortcut icon" type="image/png" href="css/Images/favicon.png"/>
+	<script src="js/Chart.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+</head>
+<body>
+	<div class="header">
+		<span id="money" class="money">Money: $1000</span>
+		<span id="bet" class="bet">Bet: $1.00</span><button id="doubleUp" onclick="Up(25)"><i class="up"></i><br/><i class="up"></i></button><button id="up" onclick="Up(0.25)"><i class="up"></i></button><button id="down"onclick="Down(0.25)"><i class="down"></i></button><button id="doubleDown" onclick="Down(25)"><i class="down"></i><br/><i class="down"></i></button>
+		<span class="time">Counter: 
+			<span id="time">20 seconds</span>
+		</span>
+		<span class="data3">
+			Current Price: $<span id="data3"></span>
+		</span>
+		<span class="info_logo"><img src="css/Images/info.png" class="logo" onmouseover="showInfo()"><span class="info" id="info"></span></span>
+	</div>
+	<div id="text1" class="text1"></div>
+	<div id="text2" class="text2"></div>
+	<div class="button">
+		<button id="call" onclick="Call()" class="call">Call</button>
+		<button id="put" onclick="Put()" class="put">Put</button>
+	</div>
+	<canvas id="myChart"></canvas>
+	<div class="footer">Copyright &copy; 2018 || Dwiky Putra R R T</div>
+</body>
+<script type="text/javascript" src="js/js.js">
+</script>
+</html>

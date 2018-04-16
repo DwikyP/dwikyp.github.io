@@ -1,0 +1,12 @@
+<div>
+	<p>Welcome to Trade Option</p>
+	<p>Based on it's name, to play this game you just need to 
+	choose on 2 option, whether the price is up or down. 
+	To choose up, click "Call" button. To choose down, click 
+	"Put" button. You can choose as much as you want before
+	time out which is 5 seconds since first choice</p>
+	<p>If your choices are corrects, you will get 80% profits of 
+	each of your bet, otherwise you will loss if your choices are
+	incorrects
+	</p>
+</div>
